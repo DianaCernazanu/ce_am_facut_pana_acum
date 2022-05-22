@@ -1,15 +1,14 @@
+import java.util.ArrayList;
+
 public class proiect_SEF {
     public static void main(String[] args){
-        System.out.println("HELLO ") ;
+        Application app = new Application() ;
 
-        Patient patient1 = new Patient("ana" , "parola123") ;
-
-        patient1.addConsultation("doctor1"  , "consultatie" , 1 , 3 , 2001);
-
-        System.out.println(patient1.getName()) ;
-
-        Calendar test = new Calendar() ;
-
-        test.print();
+        app.addDoctor("George" , "oftalmolog" , 5 , new int[]{1, 2, 6, 8, 10});
+        app.addDoctor("Maria" , "oftalmolog" , 7 , new int[]{1, 2, 7, 9, 10 , 11 , 13});
+        //app.printCalendar();
+        app.addPatient("Ionel") ;
+        app.makeAppointment("Ionel" , "George" , 1 , 2 , 3);
+        app.printCalendar();
     }
 }

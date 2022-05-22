@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Calendar {
-    private ArrayList<Month> months ;
+    private static ArrayList<Month> months ;
 
     public Calendar(){
         months = new ArrayList<Month>() ;
@@ -19,19 +19,31 @@ public class Calendar {
                     months.add(temp) ;
                 }
             }
-
-
-
-
-
-
-
         }
     }
 
-    public void print(){
+    /*public void print(){
         for(int i=0 ;i<12 ; i++){
             System.out.println(months.get(i).getNumber_of_days()) ;
         }
+    }*/
+
+    public void setSchedule(ArrayList<Doctor> doctors){
+        for(int i=0 ; i<12 ; i++){
+            months.get(i).setSchedule(doctors);
+        }
     }
+
+    public void printCalendar(){
+        for(int i=0 ; i<12 ; i++){
+            System.out.println("Month: "+i) ;
+            months.get(i).printMonth();
+            System.out.println() ;
+        }
+    }
+
+    public Month getMonth(int month_number){
+        return months.get(month_number) ;
+    }
+
 }
